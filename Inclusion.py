@@ -6,7 +6,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import GridSearchCV
 
 # Load data
-df = pd.read_csv(r'C:\Users\gunx0\Desktop\MyPyCodes\code git\Financial_inclusion_dataset.csv')
+df = pd.read_csv('Financial_inclusion_dataset.csv')
 
 # Columns to encode
 columns_to_encode = ['location_type', 'cellphone_access', 'gender_of_respondent', 'job_type', 'education_level',
@@ -52,7 +52,7 @@ if st.button('Predicting if the individual uses a bank account?'):
     prediction_label = prediction_mapping.get(prediction[0], 'Unknown')
     st.success(f'Prediction: {prediction_label}')
 
-df = pd.read_csv(r'C:\Users\gunx0\Desktop\MyPyCodes\code git\Financial_inclusion_dataset.csv')
+df = pd.read_csv('Financial_inclusion_dataset.csv')
 encoded_values_list = []
 for column in columns_to_encode:
     original_values = df[column].unique()
